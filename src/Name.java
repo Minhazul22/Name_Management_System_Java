@@ -1,6 +1,5 @@
-import java.time.LocalDate;
 import java.util.Scanner;
-public class Main {
+public class Name {
     public static void main(String[] args) {
 
         System.out.println("Moin Moin!"); //greeting
@@ -68,4 +67,3 @@ public class Main {
     }
 }
 
-//////////+++++///////
