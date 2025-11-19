@@ -4,11 +4,12 @@ import java.time.LocalTime;
 
 
 public class Person {
-    String first_name;
-    String last_name;
-    int day;
-    int month;
-    int year;
+    private String first_name;
+    private String last_name;
+    private int day;
+    private int month;
+    private int year;
+    private static int personCount = 0;
 
 
 
@@ -19,6 +20,7 @@ public class Person {
         this.day = day;
         this.month = month;
         this.year = year;
+        personCount++; //increment when new person is created
     }
 
 
@@ -27,6 +29,40 @@ public class Person {
                 ", Name Changed Previously: " + day + "/" + month + "/" + year);
 
     }
+
+    //getter method
+    public String getFirstName(){
+        return first_name;
+    }
+    //setter method
+    public void setFirst_name(String first_name){
+        this.first_name = first_name;
+    }
+    //getter method for last name
+    public String getLast_name(){
+        return last_name;
+    }
+    //setter method
+    public void setLast_name(){
+        this.last_name = last_name;
+    }
+
+    //getter method for day
+    public int getDay() {
+        return day;
+    }
+    //setter method for day
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    //getter method
+    public int getMonth() {
+        return month;
+    }
+
+
+
 
     public void changeName (String new_first_name, String new_last_name, int new_day, int new_month, int new_year) {
         LocalDate oldDate = LocalDate.of(this.year, this.month, this.day);
@@ -49,4 +85,5 @@ public class Person {
 
 
     }
+
 }
