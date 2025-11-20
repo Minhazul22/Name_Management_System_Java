@@ -8,10 +8,11 @@ public class Name {
 
 
 
-//Create Person objects
-        Person person_1 = new Person("Aam", "Rupali", 1, 2, 2020);
-        Person person_2 = new Person("Champa", "Kola", 2, 3, 2023);
-        Person person_3 = new Person("Kalo", "Jaam", 3, 4, 2024);
+//Create array of Person objects
+        Person[] person = new Person[3];
+        person[0] = new Person("Aam", "Rupali", 1, 2, 2020);
+        person[1] = new Person("Misty", "Alu", 1, 2, 2020);
+        person[2] = new Person("Champa", "Kola", 1, 2, 2020);
 
 
 
@@ -26,9 +27,9 @@ public class Name {
                 System.out.println("Bye");
                 System.exit(0);
             } else if (entered_number == 4) { //displaying all information
-                person_1.display_info();
-                person_2.display_info();
-                person_3.display_info();
+                for (int i = 0; i < person.length; i++){
+                    person[i].display_info();
+                }
             } else if (entered_number >= 1 && entered_number <= 3) {
                 System.out.println("Enter new first name: ");
                 String newFirst_name = scan.next();
@@ -44,17 +45,10 @@ public class Name {
                 int Year = scan.nextInt();
                 scan.nextLine(); //consume next line
 
-                switch (entered_number) {
-                    case 1:
-                        person_1.changeName(newFirst_name, newLast_name, Day, Month, Year);
-                        break;
-                    case 2:
-                        person_2.changeName(newFirst_name, newLast_name, Day, Month, Year);
-                        break;
-                    case 3:
-                        person_3.changeName(newFirst_name, newLast_name, Day, Month, Year);
-                        break;
-                }
+                int selectedIndex = entered_number - 1; //Convert the user input (1,2,3) to array index(0,1,2)
+                Person selected = person[selectedIndex];
+
+                selected.changeName(newFirst_name, newLast_name, Day, Month, Year);
 
 
             } else {

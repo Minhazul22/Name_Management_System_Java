@@ -61,6 +61,14 @@ public class Person {
         return month;
     }
 
+    public void setMonth(int month){ //
+        if (month >= 1 && month <= 12){ //valid month
+            this.month = month;
+        } else {
+            System.out.println("Invalid month! Must be 1-13");
+        }
+    }
+
 
 
 
